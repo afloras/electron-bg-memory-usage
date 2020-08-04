@@ -1,6 +1,33 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// No Node.js APIs are available in this process because
-// `nodeIntegration` is turned off. Use `preload.js` to
-// selectively enable features needed in the rendering
-// process.
+window.addEventListener('load', function() {
+  /*document.getElementById('load-image-title').onclick = function() {
+    const fs = require('fs')
+    const path = require('path')
+
+    const myPath = path.join(__dirname, 'picture.png')
+
+    fs.readFile(myPath, function(err, data) {
+      if (err) throw err
+
+      const picture = document.getElementById('picture')
+      const param = '#date=' + new Date().getTime()
+
+      picture.style.backgroundImage = 'url(' + 'data:image/png;base64,' + data.toString('base64') + param + ')'
+    })
+  }*/
+
+  setInterval(() => {
+    const fs = require('fs')
+    const path = require('path')
+
+    const myPath = path.join(__dirname, 'picture.png')
+
+    fs.readFile(myPath, function(err, data) {
+      if (err) throw err
+
+      const picture = document.getElementById('picture')
+      const param = '#date=' + new Date().getTime()
+
+      picture.style.backgroundImage = 'url(' + 'data:image/png;base64,' + data.toString('base64') + param + ')'
+    })
+  }, 200)
+})
